@@ -1,0 +1,5 @@
+#!/bin/sh
+# Run the coach from anywhere, e.g.  ./fde today
+# Tip: add  alias fde="/path/to/fde-coach/fde"  to your shell profile, then just type: fde today
+here="$(cd "$(dirname "$0")" && pwd)"
+PYTHONPATH="$here${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m fde_coach "$@"

@@ -1,0 +1,220 @@
+# config.example.toml - example settings for the job finder.
+#
+# Make your own copy (config.toml is gitignored, so your preferences stay private):
+#   cp config.example.toml config.toml
+# then edit config.toml and run: fde jobs fetch
+# Until config.toml exists, the coach reads this file instead.
+#
+# Every company below answered on its public job-board API on 2026-11-10.
+# To add a company, open its careers page. If a job link contains
+#   boards.greenhouse.io/<slug>  or  job-boards.greenhouse.io/<slug>  -> ats = "greenhouse"
+#   jobs.lever.co/<slug>                                              -> ats = "lever"
+#   jobs.ashbyhq.com/<slug>                                           -> ats = "ashby"
+# add { name = "...", ats = "...", slug = "<slug>" }. Companies on Workday or their own sites
+# (Microsoft, Google, AWS, Salesforce, ...) are covered by the search links further down.
+# (TOML needs this top-level list before the [sections] below.)
+companies = [
+  # AI labs and model companies
+  { name = "OpenAI", ats = "ashby", slug = "openai" },
+  { name = "Anthropic", ats = "greenhouse", slug = "anthropic" },
+  { name = "Cohere", ats = "ashby", slug = "cohere" },
+  { name = "Sarvam AI", ats = "ashby", slug = "sarvam" },
+  { name = "Perplexity", ats = "ashby", slug = "perplexity" },
+  { name = "Magic", ats = "ashby", slug = "magic" },
+
+  # AI applications and agent companies (most FDE hiring happens here)
+  { name = "Sierra", ats = "ashby", slug = "sierra" },
+  { name = "Decagon", ats = "ashby", slug = "decagon" },
+  { name = "Harvey", ats = "ashby", slug = "harvey" },
+  { name = "Glean", ats = "greenhouse", slug = "gleanwork" },
+  { name = "Distyl AI", ats = "ashby", slug = "distyl" },
+  { name = "Cognition", ats = "ashby", slug = "cognition" },
+  { name = "Cursor", ats = "ashby", slug = "cursor" },
+  { name = "Replit", ats = "ashby", slug = "replit" },
+  { name = "Lovable", ats = "ashby", slug = "lovable" },
+  { name = "Notion", ats = "ashby", slug = "notion" },
+  { name = "Figma", ats = "greenhouse", slug = "figma" },
+  { name = "Vercel", ats = "greenhouse", slug = "vercel" },
+  { name = "Ramp", ats = "ashby", slug = "ramp" },
+  { name = "Abridge", ats = "ashby", slug = "abridge" },
+  { name = "Writer", ats = "ashby", slug = "writer" },
+  { name = "ElevenLabs", ats = "ashby", slug = "elevenlabs" },
+  { name = "Cresta", ats = "greenhouse", slug = "cresta" },
+  { name = "Observe.AI", ats = "greenhouse", slug = "observeai" },
+  { name = "Giga", ats = "ashby", slug = "gigaml" },
+  { name = "Composio", ats = "ashby", slug = "composio" },
+  { name = "Exa", ats = "ashby", slug = "exa" },
+  { name = "Tavily", ats = "ashby", slug = "tavily" },
+  { name = "n8n", ats = "ashby", slug = "n8n" },
+  { name = "Dust", ats = "ashby", slug = "dust" },
+  { name = "Wordsmith", ats = "ashby", slug = "wordsmith" },
+  { name = "Synthesia", ats = "ashby", slug = "synthesia" },
+  { name = "Mercor", ats = "ashby", slug = "mercor" },
+  { name = "Clay", ats = "ashby", slug = "claylabs" },
+  { name = "Hex", ats = "ashby", slug = "hex" },
+  { name = "Factory", ats = "ashby", slug = "factory" },
+  { name = "Linear", ats = "ashby", slug = "linear" },
+  { name = "Unify", ats = "ashby", slug = "unify" },
+
+  # Voice AI
+  { name = "Deepgram", ats = "ashby", slug = "deepgram" },
+  { name = "AssemblyAI", ats = "greenhouse", slug = "assemblyai" },
+  { name = "Speechmatics", ats = "greenhouse", slug = "speechmatics" },
+  { name = "LiveKit", ats = "ashby", slug = "livekit" },
+  { name = "Cartesia", ats = "ashby", slug = "cartesia" },
+  { name = "Vapi", ats = "ashby", slug = "vapi" },
+
+  # Data and AI platforms
+  { name = "Databricks", ats = "greenhouse", slug = "databricks" },
+  { name = "Scale AI", ats = "greenhouse", slug = "scaleai" },
+  { name = "Snorkel AI", ats = "greenhouse", slug = "snorkelai" },
+  { name = "Labelbox", ats = "greenhouse", slug = "labelbox" },
+  { name = "Arize AI", ats = "greenhouse", slug = "arizeai" },
+  { name = "Braintrust", ats = "ashby", slug = "braintrust" },
+  { name = "Dataiku", ats = "greenhouse", slug = "dataiku" },
+  { name = "Domino Data Lab", ats = "greenhouse", slug = "dominodatalab" },
+  { name = "C3 AI", ats = "greenhouse", slug = "c3iot" },
+  { name = "Celonis", ats = "greenhouse", slug = "celonis" },
+  { name = "Neo4j", ats = "greenhouse", slug = "neo4j" },
+  { name = "ClickHouse", ats = "ashby", slug = "clickhouse" },
+  { name = "Supabase", ats = "ashby", slug = "supabase" },
+  { name = "MongoDB", ats = "greenhouse", slug = "mongodb" },
+  { name = "Elastic", ats = "greenhouse", slug = "elastic" },
+  { name = "Temporal", ats = "ashby", slug = "temporal" },
+  { name = "Fivetran", ats = "greenhouse", slug = "fivetran" },
+  { name = "Airbyte", ats = "ashby", slug = "airbyte" },
+  { name = "Atlan", ats = "ashby", slug = "atlan" },
+  { name = "Pinecone", ats = "ashby", slug = "pinecone" },
+  { name = "Weaviate", ats = "ashby", slug = "weaviate" },
+  { name = "LangChain", ats = "ashby", slug = "langchain" },
+  { name = "LlamaIndex", ats = "ashby", slug = "llamaindex" },
+
+  # AI infrastructure and inference
+  { name = "Baseten", ats = "ashby", slug = "baseten" },
+  { name = "Modal", ats = "ashby", slug = "modal" },
+  { name = "Together AI", ats = "greenhouse", slug = "togetherai" },
+  { name = "Nebius", ats = "greenhouse", slug = "nebius" },
+  { name = "CoreWeave", ats = "greenhouse", slug = "coreweave" },
+  { name = "Crusoe", ats = "ashby", slug = "crusoe" },
+  { name = "Lambda", ats = "ashby", slug = "lambda" },
+  { name = "SambaNova", ats = "greenhouse", slug = "sambanovasystems" },
+  { name = "Browserbase", ats = "ashby", slug = "browserbase" },
+  { name = "E2B", ats = "ashby", slug = "e2b" },
+
+  # DevOps / platform companies with FDE or field-engineering teams
+  { name = "Harness", ats = "greenhouse", slug = "harnessinc" },
+  { name = "GitLab", ats = "greenhouse", slug = "gitlab" },
+  { name = "Grafana Labs", ats = "greenhouse", slug = "grafanalabs" },
+  { name = "Canonical", ats = "greenhouse", slug = "canonical" },
+  { name = "Datadog", ats = "greenhouse", slug = "datadog" },
+  { name = "Cloudflare", ats = "greenhouse", slug = "cloudflare" },
+
+  # Enterprise software and fintech with forward-deployed teams
+  { name = "Palantir", ats = "lever", slug = "palantir" },
+  { name = "Stripe", ats = "greenhouse", slug = "stripe" },
+  { name = "Coinbase", ats = "greenhouse", slug = "coinbase" },
+  { name = "Samsara", ats = "greenhouse", slug = "samsara" },
+]
+
+[search]
+# EXAMPLE VALUES - replace them with the places you can actually work.
+# On-site/hybrid regions you can work in, in order of preference (first is listed first).
+# Any name defined under [regions] below can be used.
+regions = ["us", "uk", "eu"]
+# Also keep remote roles that are open to one of these regions, or that name no region at all.
+remote_ok = true
+remote_open_to = ["anywhere"]
+
+# Regular expressions (case-insensitive) that decide which region a location string is in.
+# 'elsewhere' only exists so that e.g. "Remote - Canada" is recognised and dropped.
+[regions]
+india = '\bindia\b|hyderabad|pune|chennai|mumbai|gurgaon|gurugram|noida|delhi'
+# 'uae' covers the UAE and the rest of the Gulf / Middle East.
+uae = 'united arab emirates|\buae\b|dubai|abu dhabi|middle east|\bmena\b|saudi|riyadh|qatar|doha|bahrain|kuwait|\boman\b'
+singapore = 'singapore'
+uk = 'united kingdom|\buk\b|london|manchester|edinburgh|cambridge, uk|bristol|england|scotland'
+eu = 'europe|\bemea\b|\beu\b|ireland|dublin|netherlands|amsterdam|germany|berlin|munich|france|paris|spain|madrid|barcelona|portugal|lisbon|sweden|stockholm|denmark|copenhagen|finland|helsinki|poland|warsaw|italy|milan|belgium|brussels|austria|vienna|czech|prague|switzerland|zurich'
+# US cities and states. Remote roles for 'AMER' / 'Americas' are counted as US.
+us = 'united states|\busa?\b|u\.s\.|\bamer\b|americas|north america|\bfederal\b|new york|nyc|san francisco|bay area|seattle|boston|austin|chicago|los angeles|denver|atlanta|palo alto|mountain view|washington|d\.c\.|\b(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|wisconsin|wyoming)\b|, (ca|ny|wa|tx|ma|il|co|ga|va|nc|fl)\b'
+apac = '\bapac\b|asia'
+anywhere = 'anywhere|worldwide|\bglobal\b|international'
+elsewhere = 'canada|toronto|vancouver|montreal|mexico|brazil|latam|argentina|colombia|australia|sydney|melbourne|new zealand|japan|tokyo|korea|seoul|china|beijing|shanghai|hong kong|taiwan|israel|tel aviv|south africa'
+
+# Job titles, checked in order A -> B -> C after 'exclude'. Remove a language from 'exclude' if you speak it.
+[tiers]
+A = 'forward[- ]deploy|\bfde\b|deployment engineer|deployed engineer|deployment strategist'
+B = 'applied ai|\bai engineer|\bllm\b|gen ?ai|generative ai|agent engineer|ai agent|agentic|ai solutions|solutions? (engineer|architect)|solution architect|customer engineer|field engineer|ai platform|ml platform|machine learning engineer|\bml engineer|ai infrastructure|ml infrastructure|implementation engineer|technical deployment'
+C = 'platform engineer|infrastructure engineer|site reliability|\bsre\b|devops|cloud engineer|cloud architect|kubernetes|production engineer|reliability engineer'
+exclude = '\bintern\b|internship|new grad|early (talent|career)|graduate|apprentice|recruit|account executive|sales development|marketing|counsel|designer|front[- ]?end|\bdirector\b|vice president|\bvp\b|product manager|technician|electrical|mechanical|hardware|mandarin|japanese|korean|french speak|german speak|spanish speak|italian speak'
+
+# Skills counted by `fde jobs skills` and the report's "market pulse" (case-insensitive regex).
+[skill_keywords]
+"Python" = '\bpython\b'
+"TypeScript / JavaScript" = 'typescript|javascript|node\.js|react'
+"SQL" = '\bsql\b|postgres'
+"LLMs / prompting" = '\bllms?\b|large language model|prompt'
+"RAG / retrieval" = '\brag\b|retrieval|vector (db|database|search|store)|embedding'
+"Agents / tool use" = '\bagents?\b|agentic|tool[- ]use|function calling'
+"MCP" = '\bmcp\b|model context protocol'
+"Evals" = '\bevals?\b|evaluation'
+"Fine-tuning / post-training" = 'fine[- ]tun|post[- ]training|\brlhf\b|\blora\b'
+"Knowledge graphs" = 'knowledge graph|graph ?rag|neo4j|ontolog'
+"Data pipelines / ETL" = 'data pipeline|\betl\b|\belt\b|airflow|dagster|\bdbt\b|spark|kafka|ingestion'
+"Distributed systems" = 'distributed system'
+"Kubernetes / containers" = 'kubernetes|\bk8s\b|docker|container'
+"Cloud (AWS / Azure / GCP)" = '\baws\b|azure|\bgcp\b|google cloud'
+"Terraform / IaC" = 'terraform|infrastructure as code|\biac\b|pulumi'
+"APIs / backend" = '\bapis?\b|backend|fastapi|restful'
+"ML fundamentals" = 'machine learning|\bml\b|pytorch|scikit|model training'
+"Customer-facing" = 'customer[- ]facing|client[- ]facing|stakeholder|work(ing)? (directly )?with customers'
+"Security, compliance & private deployments" = 'security (review|requirement|posture|control)s?|compliance (requirement|framework|standard)s?|regulatory|regulated|\bsoc ?2\b|hipaa|gdpr|fedramp|data residency|on-?prem|air-?gapped|\bvpc\b|private cloud'
+"Travel required" = '\btravel(ing|ling)? (up to|is required|required|requirement|\d+|to (customer|client)|on-?site|as needed|frequently|regularly|extensively)|willing(ness)? to travel|\d+ ?%[^.]{0,20}travel|\btravel[^.]{0,20}\d+ ?%'
+
+# LinkedIn searches built by `fde jobs links` (you open them; nothing is scraped).
+[linkedin]
+posted_within = "r86400"  # r86400 = last 24 hours, r604800 = last week
+queries = [
+  '"forward deployed"',
+  '"applied AI" OR "AI engineer" OR "AI solutions architect"',
+  '"AI platform engineer" OR "LLMOps" OR "AI infrastructure engineer"',
+]
+# EXAMPLE VALUES - one set of searches per location; remote = true adds LinkedIn's "Remote" filter.
+locations = [
+  { label = "Remote (US)", name = "United States", remote = true },
+  { label = "US", name = "United States" },
+  { label = "UK", name = "United Kingdom" },
+  { label = "EU", name = "European Union" },
+]
+
+# Other places worth checking by hand (weekly is enough for most).
+[[links]]
+label = "Hacker News 'Who is hiring?' (new thread on the 1st weekday of each month)"
+url = "https://news.ycombinator.com/submitted?id=whoishiring"
+
+[[links]]
+label = "Y Combinator startup jobs"
+url = "https://www.ycombinator.com/jobs"
+
+[[links]]
+label = "Wellfound (startup jobs, free account)"
+url = "https://wellfound.com/jobs"
+
+[[links]]
+label = "Google careers - forward deployed / customer engineer AI"
+url = "https://www.google.com/about/careers/applications/jobs/results/?q=%22forward%20deployed%22%20OR%20%22customer%20engineer%22%20AI"
+
+[[links]]
+label = "Amazon / AWS jobs - forward deployed"
+url = "https://www.amazon.jobs/en/search?base_query=forward+deployed"
+
+[[links]]
+label = "Amazon / AWS jobs - generative AI solutions architect"
+url = "https://www.amazon.jobs/en/search?base_query=generative+ai+solutions+architect"
+
+[[links]]
+label = "Atlassian careers - forward deployed"
+url = "https://www.atlassian.com/company/careers/all-jobs?search=forward%20deployed"
+
+[[links]]
+label = "Salesforce careers - forward deployed (Agentforce)"
+url = "https://www.salesforce.com/company/careers/jobs/?search=forward%20deployed"

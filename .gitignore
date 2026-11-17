@@ -1,0 +1,17 @@
+# Personal data: study log, job pipeline, reports and your own settings. Never publish these.
+data/
+reports/
+notes/
+research/
+PROGRESS.md
+ROADMAP.md
+config.toml
+*.db
+*.sqlite
+
+# Python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store

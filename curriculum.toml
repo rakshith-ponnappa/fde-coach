@@ -1,0 +1,625 @@
+# curriculum.toml - your plan, read by `fde today`, `fde plan` and `fde week show N`.
+#
+# Weeks 1-16  = SPRINT to job-ready. Start applying in weeks 8-10 (see each phase's job_focus).
+# Weeks 17-26 = DEPTH TRACK while you interview / in your new job (deeper data, ML, graphs, infra).
+# Edit anything you like; `python3 -m unittest` checks that the file is still consistent.
+
+[daily]
+default = [
+  "0:00-1:30  LEARN     this week's main resource; pause videos and type every example yourself",
+  "1:30-1:40  break     stand up, water, no phone",
+  "1:40-3:10  BUILD     exercises / this week's deliverable (Copilot inline suggestions OFF while learning)",
+  "3:10-3:20  break",
+  "3:20-3:45  PRACTICE  {practice}",
+  '3:45-4:00  WRAP UP   fde log 4 "what I did"; 3 lines in notes/learning-log.md; skim fde jobs list',
+]
+sunday = [
+  "0:00-2:00  BUILD     finish this week's deliverable and push it to GitHub",
+  "2:00-2:10  break",
+  "2:10-3:10  REVIEW    redo 2 things you struggled with this week, from memory",
+  "3:10-3:40  REFLECT   fde report --write; fde skills set ...; fde week done (if the deliverable is done)",
+  "3:40-4:00  SHARE     post 3-5 lines on LinkedIn about what you built (learning in public)",
+]
+
+# Levels: 0 none, 1 aware, 2 guided, 3 independent, 4 production, 5 expert.
+# Baselines describe the intended starting point (an experienced cloud/platform engineer who is new
+# to Python and AI). Correct them for yourself on day 1 with `fde skills set KEY LEVEL`.
+[[skills]]
+key = "python"
+name = "Python programming"
+baseline = 0
+target = 4
+
+[[skills]]
+key = "swe"
+name = "Software engineering (Git, testing, packaging, code review)"
+baseline = 2
+target = 4
+
+[[skills]]
+key = "dsa"
+name = "Data structures & algorithms (interviews)"
+baseline = 0
+target = 3
+
+[[skills]]
+key = "sql"
+name = "SQL & databases"
+baseline = 1
+target = 3
+
+[[skills]]
+key = "apis"
+name = "APIs & backend services (FastAPI)"
+baseline = 1
+target = 4
+
+[[skills]]
+key = "cloud"
+name = "Cloud platforms incl. AI services (Azure / AWS / GCP)"
+baseline = 4
+target = 5
+
+[[skills]]
+key = "iac_cicd"
+name = "Infrastructure as code & CI/CD"
+baseline = 4
+target = 5
+
+[[skills]]
+key = "containers"
+name = "Docker & Kubernetes"
+baseline = 3
+target = 4
+
+[[skills]]
+key = "llm"
+name = "LLM APIs, prompting & structured outputs"
+baseline = 0
+target = 4
+
+[[skills]]
+key = "rag"
+name = "RAG & search"
+baseline = 0
+target = 4
+
+[[skills]]
+key = "agents"
+name = "Agents, tool use & MCP"
+baseline = 0
+target = 4
+
+[[skills]]
+key = "evals"
+name = "Evals & LLM observability"
+baseline = 0
+target = 4
+
+[[skills]]
+key = "llmops"
+name = "Deploying & operating AI systems (LLMOps, security, cost)"
+baseline = 1
+target = 5
+
+[[skills]]
+key = "data_pipelines"
+name = "Data pipelines (batch & streaming)"
+baseline = 1
+target = 4
+
+[[skills]]
+key = "distributed"
+name = "Distributed systems & system design"
+baseline = 2
+target = 4
+
+[[skills]]
+key = "ml"
+name = "ML fundamentals"
+baseline = 0
+target = 3
+
+[[skills]]
+key = "knowledge_graphs"
+name = "Knowledge graphs & GraphRAG"
+baseline = 0
+target = 3
+
+[[skills]]
+key = "typescript"
+name = "TypeScript & front-end basics"
+baseline = 0
+target = 2
+
+[[skills]]
+key = "communication"
+name = "Communication, writing & demos"
+baseline = 3
+target = 5
+
+[[skills]]
+key = "discovery"
+name = "Customer discovery & problem decomposition"
+baseline = 2
+target = 4
+
+[[skills]]
+key = "interviewing"
+name = "Interview performance"
+baseline = 1
+target = 4
+
+[[phases]]
+id = 1
+name = "Python fast track"
+weeks = "1-4"
+goal = "Write, test and debug Python programs on your own; finish Harvard CS50P (free certificate) with a DevOps tool as the final project."
+practice = "1 Exercism Python exercise (or redo a CS50P problem from memory)"
+job_focus = "Market watch (10 min a day): skim new roles and shortlist dream jobs. Stepping stone: if you already have platform/SRE experience, tier C roles at AI companies are within reach - send 2 good applications a week, only for jobs you would really take."
+apply_tiers = ["C"]
+apply_per_week = 2
+
+[[phases]]
+id = 2
+name = "Production Python + first AI app"
+weeks = "5-8"
+goal = "Build, test, containerise and deploy a Python API, then ship your first LLM app (RAG with evals) to Azure with Terraform."
+practice = "1 NeetCode problem, timed 25 min, then study the best solution"
+job_focus = "Keep 2 stepping-stone (tier C) applications a week. In week 8, once Project 1 is live, start applying to infra-heavy tier B roles (AI platform, LLMOps, AI infrastructure). Rewrite your LinkedIn headline toward 'Platform engineer shipping AI systems'."
+apply_tiers = ["B", "C"]
+apply_per_week = 2
+
+[[phases]]
+id = 3
+name = "Agents, evals & LLMOps"
+weeks = "9-12"
+goal = "Build agents with tools and MCP, prove quality with evals and tracing, secure them, and run AI data pipelines and LLM services in production."
+practice = "1 NeetCode problem (timed); on Saturdays read one engineering post about LLMs in production"
+job_focus = "Apply to infra-flavoured FDE roles (FDE - infrastructure / systems / DevOps, deployment engineer) and tier B AI platform / solutions roles: 4 tailored applications a week plus 2 referral requests."
+apply_tiers = ["A", "B"]
+apply_per_week = 4
+
+[[phases]]
+id = 4
+name = "FDE capstone + interview readiness"
+weeks = "13-16"
+goal = "Work like an FDE on a simulated customer problem end to end, and get ready for every interview round: coding, LLM system design, decomposition, behavioural, demo."
+practice = "Interview drill: rotate a NeetCode medium, a 45-minute build-a-feature task and a decomposition prompt"
+job_focus = "Full push on tier A and B: 6 tailored applications a week, at least half through a referral or a direct note to the hiring team. Follow up after 7 days."
+apply_tiers = ["A", "B"]
+apply_per_week = 6
+
+[[phases]]
+id = 5
+name = "Depth track (while interviewing / in your new job)"
+weeks = "17-26"
+goal = "Go deeper on what the job ads list beyond the sprint: TypeScript, data engineering, distributed systems, ML, knowledge graphs, open models and inference infrastructure."
+practice = "1 NeetCode problem or 1 system-design prompt (alternate days)"
+job_focus = "Keep 6 high-quality applications a week until you sign an offer; after that, switch to 'excel in the first 90 days'."
+apply_tiers = ["A", "B"]
+apply_per_week = 6
+
+# ---------------------------------------------------------------- Phase 1: Python fast track
+[[weeks]]
+n = 1
+phase = 1
+title = "Setup + Python basics: functions, variables, conditionals, loops"
+goals = [
+  "Install the VS Code Python extension; run Python in the terminal (python3) and from VS Code",
+  "Create a GitHub repo 'learning-python' and push your first file; keep notes/learning-log.md",
+  "CS50P lectures 0-2 (functions & variables, conditionals, loops) and their problem sets",
+  "Turn off Copilot inline completions for your practice repo: type everything yourself",
+  "Day 1: run `fde skills` and correct the baseline ratings",
+]
+resources = [
+  { name = "Harvard CS50P - Introduction to Programming with Python (free, certificate)", url = "https://cs50.harvard.edu/python/" },
+  { name = "VS Code: getting started with Python", url = "https://code.visualstudio.com/docs/python/python-tutorial" },
+  { name = "Exercism Python track (free practice with mentors)", url = "https://exercism.org/tracks/python" },
+]
+deliverable = "CS50P problem sets 0-2 submitted, and 5 Exercism exercises solved and pushed to GitHub."
+
+[[weeks]]
+n = 2
+phase = 1
+title = "Exceptions, libraries, unit tests, calling APIs"
+goals = [
+  "CS50P lectures 3-5 (exceptions, libraries, unit tests) and problem sets",
+  "Virtual environments and pip; call a public REST API with requests and work with JSON",
+  "Write pytest tests for every function you write this week",
+]
+resources = [
+  { name = "CS50P lectures 3-5", url = "https://cs50.harvard.edu/python/" },
+  { name = "Python tutorial: virtual environments and packages", url = "https://docs.python.org/3/tutorial/venv.html" },
+  { name = "Requests quickstart", url = "https://requests.readthedocs.io/en/latest/user/quickstart/" },
+  { name = "pytest: get started", url = "https://docs.pytest.org/en/stable/getting-started.html" },
+]
+deliverable = "CS50P problem sets 3-5, plus a tested script that calls a public API (e.g. GitHub repo stats) and prints a summary."
+
+[[weeks]]
+n = 3
+phase = 1
+title = "Files, regular expressions, classes - automate a DevOps chore"
+goals = [
+  "CS50P lectures 6-8 (file I/O, regular expressions, object-oriented programming)",
+  "Read and write text, CSV and JSON files; parse logs with regex",
+  "Read this repo's fde_coach code and explain each function in your notes",
+]
+resources = [
+  { name = "CS50P lectures 6-8", url = "https://cs50.harvard.edu/python/" },
+  { name = "Automate the Boring Stuff with Python (free online)", url = "https://automatetheboringstuff.com/" },
+  { name = "regex101 - test regular expressions", url = "https://regex101.com/" },
+]
+deliverable = "CS50P problem sets 6-8, plus logscan.py: parses a synthetic web-server log, counts errors per hour, with tests."
+
+[[weeks]]
+n = 4
+phase = 1
+title = "CS50P final project: a Python tool for a real DevOps problem"
+goals = [
+  "CS50P lecture 9 (et cetera: type hints, docstrings, comprehensions, argparse)",
+  "Build tfplan-summary: reads `terraform show -json` output and prints changes and risky actions (use your own sandbox plans only)",
+  "Add a small feature to fde_coach (e.g. a --company filter for `fde jobs list`) with a test",
+  "Submit the final project and claim your free CS50P certificate",
+]
+resources = [
+  { name = "CS50P lecture 9 + final project", url = "https://cs50.harvard.edu/python/" },
+  { name = "Terraform JSON output format", url = "https://developer.hashicorp.com/terraform/internals/json-format" },
+  { name = "argparse tutorial", url = "https://docs.python.org/3/howto/argparse.html" },
+]
+deliverable = "Public GitHub repo for tfplan-summary (README + tests), CS50P certificate, and one tested change merged into fde_coach."
+
+# ---------------------------------------------------------------- Phase 2: Production Python + first AI app
+[[weeks]]
+n = 5
+phase = 2
+title = "Professional Python workflow + SQL + interview practice begins"
+goals = [
+  "Convert tfplan-summary to a uv project with Ruff, type checking and pre-commit hooks",
+  "SQL: SQLBolt lessons, then PostgreSQL in Docker; joins, indexes, transactions",
+  "Start the NeetCode roadmap: arrays & hashing (1 problem a day from now on)",
+]
+resources = [
+  { name = "uv - Python packaging and projects", url = "https://docs.astral.sh/uv/" },
+  { name = "Ruff - linter and formatter", url = "https://docs.astral.sh/ruff/" },
+  { name = "SQLBolt - interactive SQL lessons", url = "https://sqlbolt.com/" },
+  { name = "NeetCode roadmap", url = "https://neetcode.io/roadmap" },
+]
+deliverable = "tfplan-summary installable with `uv tool install`, linted and type-checked in pre-commit; SQLBolt done; 6 NeetCode problems."
+
+[[weeks]]
+n = 6
+phase = 2
+title = "Build a production-style API: FastAPI, Pydantic, Postgres, Docker, CI"
+goals = [
+  "FastAPI tutorial: routes, Pydantic models, dependency injection, error handling",
+  "Persist to Postgres; test with TestClient and a test database",
+  "Dockerfile (slim, non-root) + docker compose; GitHub Actions: lint, type-check, test, build",
+]
+resources = [
+  { name = "FastAPI tutorial", url = "https://fastapi.tiangolo.com/tutorial/" },
+  { name = "Pydantic documentation", url = "https://pydantic.dev/docs/validation/latest/get-started/" },
+  { name = "Docker guide: containerise a Python app", url = "https://docs.docker.com/guides/python/" },
+  { name = "pgexercises - practise PostgreSQL queries", url = "https://pgexercises.com/" },
+]
+deliverable = "A 'runbook API' (CRUD for synthetic runbooks) with tests, a container image and a green CI pipeline."
+
+[[weeks]]
+n = 7
+phase = 2
+title = "How LLMs work + calling LLM APIs: prompts, structured output, tools"
+goals = [
+  "Intuition: tokens, embeddings, attention, context windows, sampling, hallucinations",
+  "Call Gemini (free tier), a local model through Ollama, and optionally OpenAI/Anthropic with a few dollars of credit",
+  "Structured outputs validated with Pydantic; tool/function calling; count tokens and cost per call",
+]
+resources = [
+  { name = "3Blue1Brown - neural networks and transformers (visual)", url = "https://www.3blue1brown.com/topics/neural-networks" },
+  { name = "Anthropic courses on GitHub (prompting, tool use)", url = "https://github.com/anthropics/courses" },
+  { name = "Gemini API docs (free tier)", url = "https://aistudio.google.com/docs" },
+  { name = "Ollama - run open models on your own machine", url = "https://ollama.com/" },
+]
+deliverable = "tfplan-summary v2: an LLM turns the plan into a validated JSON risk summary, and the tool prints the cost of each run."
+
+[[weeks]]
+n = 8
+phase = 2
+title = "RAG + evals + cloud deploy = Project 1 (start tier B applications)"
+goals = [
+  "Embeddings, chunking and vector search with pgvector; answers with citations",
+  "Build a 30-question golden set; measure retrieval hit rate and answer quality (LLM-as-judge, checked by you)",
+  "Deploy to Azure Container Apps with Terraform, secrets in Key Vault, OpenTelemetry traces",
+]
+resources = [
+  { name = "DataTalksClub LLM Zoomcamp (free; RAG + evaluation modules)", url = "https://github.com/DataTalksClub/llm-zoomcamp" },
+  { name = "pgvector", url = "https://github.com/pgvector/pgvector" },
+  { name = "Hamel Husain - LLM evals FAQ", url = "https://hamel.dev/blog/posts/evals-faq/" },
+  { name = "Azure Container Apps documentation", url = "https://learn.microsoft.com/en-us/azure/container-apps/" },
+]
+deliverable = "Project 1 'Ops Docs Q&A' live: RAG over 500+ pages of public cloud docs, eval scores in the README, deployed with Terraform. Post it on LinkedIn."
+
+# ---------------------------------------------------------------- Phase 3: Agents, evals & LLMOps
+[[weeks]]
+n = 9
+phase = 3
+title = "Agents from scratch: the tool-calling loop and when NOT to use agents"
+goals = [
+  "Learn the workflow patterns first: prompt chaining, routing, parallelisation, orchestrator-workers, evaluator-optimiser",
+  "Write an agent loop in plain Python with 3 tools, a step limit, timeouts and human approval for any 'write' action",
+  "Log every step so you can replay and debug a run",
+]
+resources = [
+  { name = "Anthropic - Building effective agents", url = "https://www.anthropic.com/research/building-effective-agents" },
+  { name = "Hugging Face Agents Course (free, certificate)", url = "https://huggingface.co/learn/agents-course" },
+]
+deliverable = "On-call helper agent (no framework): reads synthetic alerts, queries a fake metrics API and your runbooks, proposes actions, asks before acting."
+
+[[weeks]]
+n = 10
+phase = 3
+title = "MCP + one agent framework, properly"
+goals = [
+  "Model Context Protocol: servers, clients, tools, resources, prompts, auth",
+  "Build a Python MCP server exposing read-only infra tools (e.g. list resources in your own sandbox subscription / cluster)",
+  "Rebuild week 9's agent with one framework (LangGraph or the OpenAI Agents SDK) and write down what got better or worse",
+]
+resources = [
+  { name = "Model Context Protocol documentation", url = "https://modelcontextprotocol.io/" },
+  { name = "Hugging Face MCP Course (free)", url = "https://huggingface.co/learn/mcp-course" },
+  { name = "LangChain Academy - free LangGraph courses", url = "https://academy.langchain.com/" },
+  { name = "OpenAI Agents SDK (Python)", url = "https://openai.github.io/openai-agents-python/" },
+]
+deliverable = "Public 'infra-readonly-mcp' repo with tests and a short demo of an agent using it."
+
+[[weeks]]
+n = 11
+phase = 3
+title = "Evals, tracing, security - and better RAG measured by evals"
+goals = [
+  "Trace every LLM/tool call with Langfuse or Arize Phoenix (both self-hostable for free); do error analysis on real traces",
+  "Agent evals (task success, tool-call correctness) running in CI as regression tests",
+  "OWASP Top 10 for LLM apps: test prompt injection, data leakage and excessive agency against your own agent",
+  "Improve RAG with hybrid search, reranking and contextual retrieval; keep a before/after eval table",
+]
+resources = [
+  { name = "Langfuse docs", url = "https://langfuse.com/docs" },
+  { name = "Arize Phoenix docs", url = "https://arize.com/docs/phoenix" },
+  { name = "OWASP Top 10 for LLM Applications", url = "https://genai.owasp.org/llm-top-10/" },
+  { name = "Anthropic - Contextual retrieval", url = "https://www.anthropic.com/research/contextual-retrieval" },
+]
+deliverable = "CI job running RAG + agent evals and prompt-injection tests on every PR; README section with the eval table and security notes."
+
+[[weeks]]
+n = 12
+phase = 3
+title = "AI data pipelines + LLMOps in production"
+goals = [
+  "Orchestrated document-ingestion pipeline (Prefect or Dagster): incremental loads, retries, re-index on model change, data-quality checks",
+  "Serving: streaming responses, caching, rate limits, fallbacks and model routing through a gateway",
+  "Cost and latency dashboard; private networking option in Terraform (how a bank or insurer would need it)",
+  "Compare Microsoft Foundry (Azure) and AWS Bedrock for the same app",
+]
+resources = [
+  { name = "Prefect documentation", url = "https://www.prefect.io/docs/v3/get-started" },
+  { name = "Dagster documentation", url = "https://dagster.io/docs" },
+  { name = "LiteLLM - LLM gateway / router", url = "https://docs.litellm.ai/" },
+  { name = "Microsoft Foundry (formerly Azure AI Foundry) documentation", url = "https://learn.microsoft.com/en-us/azure/foundry/" },
+]
+deliverable = "Project 2 'Enterprise Ops Assistant': scheduled ingestion + RAG + MCP agent + evals + dashboard, deployable with one Terraform apply."
+
+# ---------------------------------------------------------------- Phase 4: FDE capstone + interview readiness
+[[weeks]]
+n = 13
+phase = 4
+title = "FDE craft: discovery, decomposition and the capstone design doc"
+goals = [
+  "Read how FDE teams actually work (their engineering blogs, job ads and `fde jobs skills`) and list the 10 behaviours they hire for",
+  "Practise decomposition: break 5 vague business asks into users, workflows, data, success metrics and risks",
+  "Pick a public 'customer' (e.g. SEC filings for an analyst team, or a city's open service-request data); write discovery questions and a design doc",
+]
+resources = [
+  { name = "Design docs at Google (how to write one)", url = "https://www.industrialempathy.com/posts/design-docs-at-google/" },
+  { name = "Google technical writing courses (free)", url = "https://developers.google.com/tech-writing" },
+  { name = "SEC EDGAR public APIs (free data for a capstone)", url = "https://www.sec.gov/search-filings/edgar-application-programming-interfaces" },
+]
+deliverable = "5 one-page decompositions and a capstone design doc reviewed by one other engineer."
+
+[[weeks]]
+n = 14
+phase = 4
+title = "Capstone build: deliver into a 'customer environment'"
+goals = [
+  "Pipeline -> retrieval/agent workflow -> simple UI (Streamlit) -> evals",
+  "Deploy into a private 'customer VPC/VNet' with Terraform: private endpoints, logging, least-privilege identities",
+  "Write the handover pack: runbook, eval report, cost model, security notes",
+]
+resources = [
+  { name = "Streamlit documentation", url = "https://docs.streamlit.io/" },
+  { name = "Google SRE book (free) - for the runbook and monitoring", url = "https://sre.google/sre-book/table-of-contents/" },
+]
+deliverable = "Capstone v1.0 running in your sandbox with a full handover pack in the repo."
+
+[[weeks]]
+n = 15
+phase = 4
+title = "Interview prep I: CV, portfolio, coding rounds"
+goals = [
+  "One-page CV reframed as 'platform engineer who ships AI systems', with numbers; pin 3-4 projects on GitHub",
+  "LinkedIn headline/about/featured updated; list 30 people at target companies for referrals",
+  "Coding: NeetCode problems by pattern + 3 timed 'build a feature in 60-90 minutes' sessions + 1 'debug an unfamiliar repo' session",
+]
+resources = [
+  { name = "Tech Interview Handbook - resume", url = "https://www.techinterviewhandbook.org/resume/" },
+  { name = "Tech Interview Handbook - coding interview prep", url = "https://www.techinterviewhandbook.org/coding-interview-prep/" },
+  { name = "NeetCode 150 practice list", url = "https://neetcode.io/practice" },
+]
+deliverable = "CV v1 reviewed by 2 people, LinkedIn updated, 30-person referral list, 3 recorded timed coding sessions with notes."
+
+[[weeks]]
+n = 16
+phase = 4
+title = "Interview prep II: LLM system design, decomposition, behavioural, demo"
+goals = [
+  "System design for AI: write 6 designs (enterprise RAG, support agent, document pipeline, LLM gateway, agent with approvals, multi-tenant deployment)",
+  "Decomposition / customer case mocks with a peer; explain a technical topic to a non-technical 'executive' in 5 minutes",
+  "12 STAR stories from your career (incidents, migrations, DR, difficult clients, leading without authority, a failure)",
+  "Record a 3-minute capstone demo video",
+]
+resources = [
+  { name = "System Design Primer", url = "https://github.com/donnemartin/system-design-primer" },
+  { name = "Chip Huyen - Building a generative AI platform", url = "https://huyenchip.com/2024/07/25/genai-platform.html" },
+  { name = "Tech Interview Handbook - behavioural interviews", url = "https://www.techinterviewhandbook.org/behavioral-interview/" },
+]
+deliverable = "6 written designs, 12-story bank, 2 recorded mock interviews and the capstone demo video. You are now job-ready."
+
+# ---------------------------------------------------------------- Phase 5: Depth track
+[[weeks]]
+n = 17
+phase = 5
+title = "TypeScript + React for FDEs (half of FDE job ads mention it)"
+goals = [
+  "TypeScript for a Python developer: types, async/await, modules, npm",
+  "Next.js + the AI SDK: a streaming chat UI with citations on top of your Project 2 API",
+  "Practise reading and changing an unfamiliar full-stack repo - a daily FDE task",
+]
+resources = [
+  { name = "TypeScript handbook", url = "https://www.typescriptlang.org/docs/handbook/intro.html" },
+  { name = "Next.js Learn (free course)", url = "https://nextjs.org/learn" },
+  { name = "AI SDK documentation (TypeScript toolkit for AI apps)", url = "https://ai-sdk.dev/docs" },
+]
+deliverable = "A Next.js front-end for Project 2 with streaming answers and citations, deployed on a free tier."
+
+[[weeks]]
+n = 18
+phase = 5
+title = "Data engineering I: ingestion, orchestration, warehouse, dbt"
+goals = [
+  "Data modelling (facts, dimensions), ELT vs ETL, idempotent incremental loads with dlt",
+  "Warehouse basics with DuckDB (free, local) and dbt models, tests and docs",
+]
+resources = [
+  { name = "DataTalksClub Data Engineering Zoomcamp (free)", url = "https://github.com/DataTalksClub/data-engineering-zoomcamp" },
+  { name = "dlt documentation", url = "https://dlthub.com/docs/intro" },
+  { name = "dbt Learn (free courses)", url = "https://learn.getdbt.com/" },
+  { name = "DuckDB documentation", url = "https://duckdb.org/docs/" },
+]
+deliverable = "Incremental pipeline from a public API into DuckDB with dbt models, tests and generated docs."
+
+[[weeks]]
+n = 19
+phase = 5
+title = "Data engineering II: Spark batch and Kafka streaming"
+goals = [
+  "Spark architecture (driver, executors, partitions, shuffles) with PySpark; Polars/DuckDB for single-machine work",
+  "Streaming with Kafka or Redpanda: topics, partitions, consumer groups, offsets, delivery guarantees",
+]
+resources = [
+  { name = "PySpark getting started", url = "https://spark.apache.org/docs/latest/api/python/getting_started/index.html" },
+  { name = "Polars user guide", url = "https://docs.pola.rs/" },
+  { name = "Apache Kafka documentation", url = "https://kafka.apache.org/documentation/" },
+]
+deliverable = "The same transformation in Polars and PySpark with a timing write-up, plus a small events -> Kafka -> database stream."
+
+[[weeks]]
+n = 20
+phase = 5
+title = "Distributed systems fundamentals"
+goals = [
+  "Replication, partitioning, consistency models, consensus (Raft), failure detection, idempotency",
+  "Map each idea to something you have run in production (failover groups, DR, load balancers) - generic examples only",
+]
+resources = [
+  { name = "MIT 6.5840 Distributed Systems (free lectures and labs)", url = "https://pdos.csail.mit.edu/6.824/" },
+  { name = "Raft consensus - visual explanation", url = "https://raft.github.io/" },
+]
+deliverable = "Blog post: 'What running production systems taught me about distributed systems', mapped to the theory."
+
+[[weeks]]
+n = 21
+phase = 5
+title = "System design depth, including ML systems"
+goals = [
+  "Practise 6 more designs at senior level: capacity estimates, failure modes, data flow, cost",
+  "ML/LLM system design: feedback loops, monitoring, data and model versioning",
+]
+resources = [
+  { name = "System Design Primer", url = "https://github.com/donnemartin/system-design-primer" },
+  { name = "Chip Huyen's blog (ML systems in production)", url = "https://huyenchip.com/blog/" },
+]
+deliverable = "6 more written designs with diagrams; one presented to a peer in a 45-minute mock."
+
+[[weeks]]
+n = 22
+phase = 5
+title = "ML fundamentals I: how models learn and how to evaluate them"
+goals = [
+  "Linear/logistic regression, loss, gradient descent, overfitting, train/validation/test splits",
+  "scikit-learn models and metrics (precision, recall, ROC); a Kaggle submission",
+]
+resources = [
+  { name = "Google Machine Learning Crash Course (free)", url = "https://developers.google.com/machine-learning/crash-course" },
+  { name = "Kaggle Learn (free micro-courses)", url = "https://www.kaggle.com/learn" },
+  { name = "scikit-learn user guide", url = "https://scikit-learn.org/stable/user_guide.html" },
+]
+deliverable = "Kaggle notebook with a submission and a written evaluation of your model choices."
+
+[[weeks]]
+n = 23
+phase = 5
+title = "ML fundamentals II: neural networks, PyTorch and MLOps"
+goals = [
+  "Backpropagation by building micrograd; a PyTorch training loop on a free Kaggle/Colab GPU",
+  "Experiment tracking and model serving: MLflow + FastAPI, with a drift check",
+]
+resources = [
+  { name = "Andrej Karpathy - Neural Networks: Zero to Hero", url = "https://karpathy.ai/zero-to-hero.html" },
+  { name = "PyTorch tutorials", url = "https://docs.pytorch.org/tutorials/" },
+  { name = "DataTalksClub MLOps Zoomcamp (free)", url = "https://github.com/DataTalksClub/mlops-zoomcamp" },
+]
+deliverable = "micrograd re-implemented, plus a tracked PyTorch model served behind an API."
+
+[[weeks]]
+n = 24
+phase = 5
+title = "Knowledge graphs & GraphRAG, measured"
+goals = [
+  "Graph data modelling and Cypher in Neo4j (AuraDB Free)",
+  "Extract entities and relationships from your Project 2 documents with LLM structured outputs into a graph",
+  "GraphRAG patterns: local/global search, community summaries, graph + vector hybrids",
+  "Compare vector RAG, GraphRAG and a hybrid on 30 multi-hop questions with your eval harness",
+]
+resources = [
+  { name = "Neo4j GraphAcademy (free courses and certifications)", url = "https://graphacademy.neo4j.com/" },
+  { name = "Microsoft GraphRAG", url = "https://microsoft.github.io/graphrag/" },
+  { name = "Neo4j GraphRAG for Python", url = "https://neo4j.com/docs/neo4j-graphrag-python/current/" },
+]
+deliverable = "A knowledge graph of your Project 2 documents, an eval table and a blog post: when a graph beats plain vector search (and when it doesn't)."
+
+[[weeks]]
+n = 25
+phase = 5
+title = "Open models and inference infrastructure"
+goals = [
+  "Serving open-weight models: vLLM concepts, quantisation, batching, GPU sizing and cost",
+  "Models on Kubernetes (e.g. vLLM behind an autoscaled deployment); LoRA fine-tuning basics with Unsloth on a free GPU",
+]
+resources = [
+  { name = "vLLM documentation", url = "https://docs.vllm.ai/" },
+  { name = "Unsloth documentation (free Colab/Kaggle notebooks)", url = "https://unsloth.ai/docs" },
+]
+deliverable = "Terraform + Kubernetes manifests that serve an open model with a load-test report (latency, throughput, cost per 1M tokens)."
+
+[[weeks]]
+n = 26
+phase = 5
+title = "Stand out: open source, writing, Year 2 plan"
+goals = [
+  "Land one open-source contribution (docs fix, bug fix or example) in an MCP server, agent framework or RAG library",
+  "Submit a talk proposal to a local meetup; publish your best blog post",
+  "Write your Year 2 plan using `fde report` and what `fde jobs skills` says the market asks for",
+]
+resources = [
+  { name = "Good First Issue - beginner-friendly open-source issues", url = "https://goodfirstissue.dev/" },
+  { name = "GitHub: contributing to open source", url = "https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project" },
+]
+deliverable = "A merged open-source PR, a talk proposal, and your written Year 2 plan."
